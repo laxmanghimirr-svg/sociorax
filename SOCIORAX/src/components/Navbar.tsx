@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { AppleButton, LogoMark } from './Primitives';
+import { LogoMark } from './Primitives';
 
 interface NavbarProps {
   onDownloadClick?: () => void;
@@ -70,15 +70,6 @@ export function Navbar({ onDownloadClick, onGoHome, isAppDetailView }: NavbarPro
             Features & Apps
           </a>
         </nav>
-
-        {/* Right: Download Button */}
-        <div>
-          <AppleButton
-            label="Download"
-            onClick={onDownloadClick}
-            className="!py-2 !px-4 text-xs font-semibold"
-          />
-        </div>
       </div>
     </motion.header>
   );

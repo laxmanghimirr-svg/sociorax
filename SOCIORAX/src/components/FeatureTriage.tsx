@@ -14,7 +14,6 @@ export function FeatureTriage({ onSelectApp }: FeatureTriageProps) {
     { label: 'Photo Compressor', id: 'photo-compressor' },
     { label: 'Prompt Generator', id: 'prompt-generator' },
     { label: 'PDF Scanner', id: 'pdf-scanner' },
-    { label: 'Exercise', id: 'exercise-app' },
     { label: 'QR Scanner', id: 'qr-scanner' },
   ];
 

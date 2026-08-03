@@ -40,31 +40,35 @@ export function DownloadModal({ isOpen, onClose, onError }: DownloadModalProps) 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 10 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="liquid-glass relative w-full max-w-md rounded-2xl p-6 border border-white/20 bg-[#0e1014] text-white shadow-2xl"
-          >
-            {/* Close button */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-white/50 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+          />
 
-            {/* Header with Official Logo */}
-            <div className="flex items-center gap-3 mb-4 pr-6">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center p-1.5 border border-white/15 overflow-hidden shadow-inner">
-                <LogoMark className="w-full h-full" />
+          {/* Modal Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 8 }}
+            className="relative z-10 w-full max-w-md bg-[#12141a] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2.5">
+                <LogoMark className="w-7 h-7 text-white" />
+                <span className="font-semibold text-sm text-white">Download Sociorax</span>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white">Download Sociorax</h3>
-                <p className="text-xs text-white/60 mt-0.5">Version 2.4.0 · Multi-platform</p>
-              </div>
+              <button
+                onClick={onClose}
+                className="p-2 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
             <p className="text-xs text-white/70 mb-6 leading-relaxed">
@@ -83,11 +87,6 @@ export function DownloadModal({ isOpen, onClose, onError }: DownloadModalProps) 
                     : 'bg-white/5 hover:bg-white/10 border-white/15'
                 }`}
               >
-                {isWindowsRecommended && (
-                  <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase bg-blue-500 text-white flex items-center gap-1 shadow">
-                    <Sparkles className="w-2.5 h-2.5" /> Recommended
-                  </span>
-                )}
                 <div className="flex items-center gap-3">
                   <Monitor className={`w-5 h-5 ${isWindowsRecommended ? 'text-blue-300' : 'text-white/80'}`} />
                   <div>
@@ -119,11 +118,6 @@ export function DownloadModal({ isOpen, onClose, onError }: DownloadModalProps) 
                     : 'bg-white/5 hover:bg-white/10 border-white/15'
                 }`}
               >
-                {isAndroidRecommended && (
-                  <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase bg-emerald-500 text-white flex items-center gap-1 shadow">
-                    <Sparkles className="w-2.5 h-2.5" /> Recommended
-                  </span>
-                )}
                 <div className="flex items-center gap-3">
                   <Smartphone className={`w-5 h-5 ${isAndroidRecommended ? 'text-emerald-300' : 'text-white/80'}`} />
                   <div>
@@ -149,7 +143,7 @@ export function DownloadModal({ isOpen, onClose, onError }: DownloadModalProps) 
             {/* Footer attribution */}
             <div className="pt-3 border-t border-white/10 text-center">
               <span className="text-[11px] text-white/50 tracking-wide font-medium">
-                Sociorax · Built by <span className="text-white/90 font-semibold">Laxman</span>
+                Sociorax v2.4.0 · Safe & Verified Package
               </span>
             </div>
           </motion.div>
@@ -158,5 +152,3 @@ export function DownloadModal({ isOpen, onClose, onError }: DownloadModalProps) 
     </AnimatePresence>
   );
 }
-
-

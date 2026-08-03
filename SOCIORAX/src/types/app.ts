@@ -27,6 +27,7 @@ export interface AppItem {
   downloadSize: string;
   version: string;
   updatedDate: string;
+  isComingSoon?: boolean;
   features: AppFeature[];
   screenshots: AppScreenshot[];
   highlights: string[];

@@ -24,14 +24,6 @@ const items: FeatureCardItem[] = [
     subtitle2: 'Real-Time Activity Monitoring',
   },
   {
-    appId: 'exercise-app',
-    iconTitle: '💪 Exercise App',
-    description:
-      "Build healthier habits with guided workout plans, exercise demonstrations, personalised routines, progress tracking, and daily fitness challenges. Whether you're a beginner or an experienced athlete, everything you need is in one place.",
-    subtitle1: 'Exercise App',
-    subtitle2: 'Personal Fitness Companion',
-  },
-  {
     appId: 'photo-compressor',
     iconTitle: '🖼️ Photo Compressor',
     description:
