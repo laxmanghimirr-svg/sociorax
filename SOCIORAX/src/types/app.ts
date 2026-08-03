@@ -16,6 +16,7 @@ export interface AppItem {
   slug: string;
   name: string;
   iconTitle: string;
+  iconUrl?: string;
   category: string;
   tagline: string;
   shortDescription: string;

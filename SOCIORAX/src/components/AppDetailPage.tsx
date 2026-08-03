@@ -201,7 +201,16 @@ export function AppDetailPage({ app, onBack, onOpenDownloadModal }: AppDetailPag
         </button>
 
         <div className="flex items-center gap-2 truncate">
-          <LogoMark className="w-6 h-6 shrink-0" />
+          {app.iconUrl ? (
+            <img
+              src={app.iconUrl}
+              alt={`${app.name} Logo`}
+              className="w-6 h-6 shrink-0 object-contain rounded-lg"
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <LogoMark className="w-6 h-6 shrink-0" />
+          )}
           <span className="font-bold text-sm sm:text-base truncate">{app.name}</span>
         </div>
 
@@ -248,8 +257,17 @@ export function AppDetailPage({ app, onBack, onOpenDownloadModal }: AppDetailPag
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               {/* Large App Logo Badge */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-tr from-blue-600/30 via-indigo-600/20 to-purple-600/30 border border-white/20 p-2 shrink-0 flex items-center justify-center shadow-2xl relative group">
-                <LogoMark className="w-full h-full object-cover rounded-xl" />
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-tr from-blue-600/30 via-indigo-600/20 to-purple-600/30 border border-white/20 p-2 shrink-0 flex items-center justify-center shadow-2xl relative group overflow-hidden">
+                {app.iconUrl ? (
+                  <img
+                    src={app.iconUrl}
+                    alt={`${app.name} Logo`}
+                    className="w-full h-full object-contain rounded-xl"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <LogoMark className="w-full h-full object-cover rounded-xl" />
+                )}
               </div>
 
               {/* Title & Tagline */}
@@ -667,7 +685,16 @@ export function AppDetailPage({ app, onBack, onOpenDownloadModal }: AppDetailPag
         {/* Bottom Call To Action */}
         <section className="mt-12 md:mt-16 text-center">
           <div className="liquid-glass rounded-3xl p-8 md:p-12 border border-white/15 flex flex-col items-center space-y-6">
-            <LogoMark className="w-12 h-12" />
+            {app.iconUrl ? (
+              <img
+                src={app.iconUrl}
+                alt={`${app.name} Logo`}
+                className="w-12 h-12 object-contain rounded-xl"
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              <LogoMark className="w-12 h-12" />
+            )}
             <div className="space-y-2 max-w-lg">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Get Started with {app.name} Today

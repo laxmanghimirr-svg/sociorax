@@ -1,4 +1,9 @@
 import { AppItem } from '../types/app';
+import motionTrackerLogo from '../assets/images/motion_tracker_logo_1785755888828.jpg';
+import photoCompressorLogo from '../assets/images/photo_compressor_logo_1785756282487.jpg';
+import promptGeneratorLogo from '../assets/images/prompt_generator_logo_1785756701254.jpg';
+import pdfScannerLogo from '../assets/images/pdf_scanner_logo_1785757033865.jpg';
+import qrScannerLogo from '../assets/images/qr_scanner_logo_1785757366127.jpg';
 
 export const APPS_DATA: AppItem[] = [
   {
@@ -6,6 +11,7 @@ export const APPS_DATA: AppItem[] = [
     slug: 'motion-tracker',
     name: 'Motion Tracker',
     iconTitle: '🏃 Motion Tracker',
+    iconUrl: motionTrackerLogo,
     category: 'Fitness & Health',
     tagline: 'Real-Time Activity & Precision Movement Analytics',
     shortDescription:
@@ -85,6 +91,7 @@ export const APPS_DATA: AppItem[] = [
     slug: 'photo-compressor',
     name: 'Photo Compressor',
     iconTitle: '🖼️ Photo Compressor',
+    iconUrl: photoCompressorLogo,
     category: 'Utilities & Media',
     tagline: 'Fast, Efficient & Lossless Image Optimization',
     shortDescription:
@@ -164,6 +171,7 @@ export const APPS_DATA: AppItem[] = [
     slug: 'qr-scanner',
     name: 'QR Scanner',
     iconTitle: '📱 QR Scanner',
+    iconUrl: qrScannerLogo,
     category: 'Productivity & Utilities',
     tagline: 'Lightning Fast & Secure Code Scanning Engine',
     shortDescription:
@@ -243,6 +251,7 @@ export const APPS_DATA: AppItem[] = [
     slug: 'pdf-scanner',
     name: 'PDF Scanner',
     iconTitle: '📄 PDF Scanner',
+    iconUrl: pdfScannerLogo,
     category: 'Business & Office',
     tagline: 'Smart Document Digitization & Crystal-Clear PDF Creation',
     shortDescription:
@@ -323,6 +332,7 @@ export const APPS_DATA: AppItem[] = [
     slug: 'prompt-generator',
     name: 'Prompt Generator',
     iconTitle: '✨ Prompt Generator',
+    iconUrl: promptGeneratorLogo,
     category: 'AI & Productivity',
     tagline: 'Craft Perfect AI Prompts for Maximum Creative Output',
     shortDescription:
